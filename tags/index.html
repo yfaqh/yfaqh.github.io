@@ -306,24 +306,31 @@
   
 
   
-  <div id="gitment-ctn"></div> 
-<!-- <link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
-<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script> -->
-<link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
-<script src="https://billts.site/js/gitment.js"></script><script>
-var gitment = new Gitment({
-  id: "http://yoursite.com/tags/index.html",
-  owner: 'yfaqh',
-  repo: 'yfaqh.github.io',
-  oauth: {
-    client_id: '4bc6749491a33131479d',
-    client_secret: '19cabf90cf57e64d43b9950efdb758372016ee19',
-  },
-})
-gitment.render('gitment-ctn')
-</script>
-  
 
+
+
+  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+<script type="text/javascript">
+
+if(true){
+    var gitalk = new Gitalk({
+    clientID: '4bc6749491a33131479d',
+    clientSecret: '19cabf90cf57e64d43b9950efdb758372016ee19',
+    repo: 'yfaqh.github.io',
+    owner: 'yfaqh',
+    admin: ['yfaqh'],
+    id: 'Mon Jul 06 2020 13:46:48 GMT+0800',
+    distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
+
+  
 
           </div>
         </div>
