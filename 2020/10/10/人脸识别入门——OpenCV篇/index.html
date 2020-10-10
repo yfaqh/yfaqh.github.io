@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>人脸识别入门——OpenCV篇 | 扬帆爱起航的个人站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="人脸识别基本过程完整的人脸识别流程，一般有如下五个步骤：   图像采集：使用摄像机或摄像头采集含有人脸的图像或视频流； 人脸检测：检测图片中是否包含人脸； 预处理：对人脸图像进行灰度处理、噪声过滤等预处理； 特征点提取：提取人脸图片中包含的特征数据； 人脸识别：将新的人脸照片与人脸库进行算法匹配，输出识别结果。">
+  <meta name="description" content="前一段时间一直忙着学校里各种各样的杂事，手头上有着导师返校之前发下来的一个项目。由于涉及人脸识别等问题，同时自己没有过这方面的基础，于是乎就开始了自己的人脸识别入门之旅。学习这方面的内容，离不开学习各种库，其中耳熟能详的就是OpenCV开源库了。手动敲下相关的代码，配合实际的效果可以快速地入门。下面就对前一段时间的学习内容进行一下记录与总结。 人脸识别基本过程完整的人脸识别流程，一般有如下五个步骤">
 <meta property="og:type" content="article">
 <meta property="og:title" content="人脸识别入门——OpenCV篇">
 <meta property="og:url" content="http://yoursite.com/2020/10/10/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94OpenCV%E7%AF%87/index.html">
 <meta property="og:site_name" content="扬帆爱起航的个人站">
-<meta property="og:description" content="人脸识别基本过程完整的人脸识别流程，一般有如下五个步骤：   图像采集：使用摄像机或摄像头采集含有人脸的图像或视频流； 人脸检测：检测图片中是否包含人脸； 预处理：对人脸图像进行灰度处理、噪声过滤等预处理； 特征点提取：提取人脸图片中包含的特征数据； 人脸识别：将新的人脸照片与人脸库进行算法匹配，输出识别结果。">
+<meta property="og:description" content="前一段时间一直忙着学校里各种各样的杂事，手头上有着导师返校之前发下来的一个项目。由于涉及人脸识别等问题，同时自己没有过这方面的基础，于是乎就开始了自己的人脸识别入门之旅。学习这方面的内容，离不开学习各种库，其中耳熟能详的就是OpenCV开源库了。手动敲下相关的代码，配合实际的效果可以快速地入门。下面就对前一段时间的学习内容进行一下记录与总结。 人脸识别基本过程完整的人脸识别流程，一般有如下五个步骤">
 <meta property="og:locale">
 <meta property="og:image" content="https://www.educoder.net/api/attachments/223528">
 <meta property="og:image" content="https://www.educoder.net/attachments/download/225543">
@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://www.educoder.net/api/attachments/225718">
 <meta property="article:published_time" content="2020-10-10T08:55:39.000Z">
 <meta property="article:modified_time" content="2020-10-10T08:55:39.000Z">
-<meta property="article:author" content="扬帆爱起航">
+<meta property="article:author" content="YFAQH">
 <meta property="article:tag" content="学习">
 <meta property="article:tag" content="人脸识别">
 <meta property="article:tag" content="OpenCV">
@@ -197,8 +197,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="人脸识别基本过程"><a href="#人脸识别基本过程" class="headerlink" title="人脸识别基本过程"></a>人脸识别基本过程</h1><p>完整的人脸识别流程，一般有如下五个步骤：</p>
+        <p>前一段时间一直忙着学校里各种各样的杂事，手头上有着导师返校之前发下来的一个项目。由于涉及人脸识别等问题，同时自己没有过这方面的基础，于是乎就开始了自己的人脸识别入门之旅。学习这方面的内容，离不开学习各种库，其中耳熟能详的就是OpenCV开源库了。手动敲下相关的代码，配合实际的效果可以快速地入门。下面就对前一段时间的学习内容进行一下记录与总结。</p>
+<h1 id="人脸识别基本过程"><a href="#人脸识别基本过程" class="headerlink" title="人脸识别基本过程"></a>人脸识别基本过程</h1><p>完整的人脸识别流程，一般有如下五个步骤：</p>
 <p><img src="https://www.educoder.net/api/attachments/223528" alt="预览大图"></p>
+<a id="more"></a>
+
 <ol>
 <li>图像采集：使用摄像机或摄像头采集含有人脸的图像或视频流；</li>
 <li>人脸检测：检测图片中是否包含人脸；</li>
@@ -206,8 +209,6 @@
 <li>特征点提取：提取人脸图片中包含的特征数据；</li>
 <li>人脸识别：将新的人脸照片与人脸库进行算法匹配，输出识别结果。</li>
 </ol>
-<a id="more"></a>
-
 <h2 id="OpenCV"><a href="#OpenCV" class="headerlink" title="OpenCV"></a>OpenCV</h2><blockquote>
 <p><code>OpenCV</code>是一个开源的跨平台计算机视觉库。跨平台是指，它可以运行在<code>Linux</code>、<code>Windows</code>、<code>Android</code>和<code>Mac OS</code>等操作系统上。它实现了图像处理和计算机视觉方面的很多通用算法，具有轻量高效的特点。<code>OpenCV</code>提供了多种语言的编程接口，例如<code>C</code>、<code>C++</code>、<code>Python</code>。</p>
 </blockquote>
@@ -559,7 +560,7 @@ gitalk.render('gitalk-container')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020 扬帆爱起航
+    		&copy; 2020 YFAQH
     	</div>
       	<div class="footer-right">
 			  <!-- <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten -->
