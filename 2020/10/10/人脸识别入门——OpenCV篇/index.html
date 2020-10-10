@@ -6,15 +6,34 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>扬帆爱起航的个人站</title>
+  <title>人脸识别入门——OpenCV篇 | 扬帆爱起航的个人站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="扬帆爱起航的个人站">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="人脸识别基本过程完整的人脸识别流程，一般有如下五个步骤：   图像采集：使用摄像机或摄像头采集含有人脸的图像或视频流； 人脸检测：检测图片中是否包含人脸； 预处理：对人脸图像进行灰度处理、噪声过滤等预处理； 特征点提取：提取人脸图片中包含的特征数据； 人脸识别：将新的人脸照片与人脸库进行算法匹配，输出识别结果。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="人脸识别入门——OpenCV篇">
+<meta property="og:url" content="http://yoursite.com/2020/10/10/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94OpenCV%E7%AF%87/index.html">
 <meta property="og:site_name" content="扬帆爱起航的个人站">
+<meta property="og:description" content="人脸识别基本过程完整的人脸识别流程，一般有如下五个步骤：   图像采集：使用摄像机或摄像头采集含有人脸的图像或视频流； 人脸检测：检测图片中是否包含人脸； 预处理：对人脸图像进行灰度处理、噪声过滤等预处理； 特征点提取：提取人脸图片中包含的特征数据； 人脸识别：将新的人脸照片与人脸库进行算法匹配，输出识别结果。">
 <meta property="og:locale">
+<meta property="og:image" content="https://www.educoder.net/api/attachments/223528">
+<meta property="og:image" content="https://www.educoder.net/attachments/download/225543">
+<meta property="og:image" content="https://www.educoder.net/api/attachments/224759">
+<meta property="og:image" content="https://www.educoder.net/api/attachments/224762">
+<meta property="og:image" content="https://www.educoder.net/api/attachments/224763">
+<meta property="og:image" content="https://www.educoder.net/api/attachments/225174">
+<meta property="og:image" content="https://www.educoder.net/api/attachments/224782">
+<meta property="og:image" content="https://www.educoder.net/api/attachments/224783">
+<meta property="og:image" content="https://www.educoder.net/api/attachments/225549">
+<meta property="og:image" content="https://www.educoder.net/api/attachments/225512">
+<meta property="og:image" content="https://www.educoder.net/api/attachments/225718">
+<meta property="article:published_time" content="2020-10-10T08:55:39.000Z">
+<meta property="article:modified_time" content="2020-10-10T08:55:39.000Z">
 <meta property="article:author" content="扬帆爱起航">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="人脸识别">
+<meta property="article:tag" content="OpenCV">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.educoder.net/api/attachments/223528">
   
     <link rel="alternative" href="/atom.xml" title="扬帆爱起航的个人站" type="application/atom+xml">
   
@@ -158,16 +177,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-人脸识别入门——OpenCV篇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-人脸识别入门——OpenCV篇" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/10/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94OpenCV%E7%AF%87/">人脸识别入门——OpenCV篇</a>
+    <h1 class="article-title" itemprop="name">
+      人脸识别入门——OpenCV篇
     </h1>
   
 
@@ -189,9 +206,188 @@
 <li>特征点提取：提取人脸图片中包含的特征数据；</li>
 <li>人脸识别：将新的人脸照片与人脸库进行算法匹配，输出识别结果。</li>
 </ol>
-        
+<a id="more"></a>
+
+<h2 id="OpenCV"><a href="#OpenCV" class="headerlink" title="OpenCV"></a>OpenCV</h2><blockquote>
+<p><code>OpenCV</code>是一个开源的跨平台计算机视觉库。跨平台是指，它可以运行在<code>Linux</code>、<code>Windows</code>、<code>Android</code>和<code>Mac OS</code>等操作系统上。它实现了图像处理和计算机视觉方面的很多通用算法，具有轻量高效的特点。<code>OpenCV</code>提供了多种语言的编程接口，例如<code>C</code>、<code>C++</code>、<code>Python</code>。</p>
+</blockquote>
+<h3 id="一、图片基本操作"><a href="#一、图片基本操作" class="headerlink" title="一、图片基本操作"></a>一、图片基本操作</h3><h4 id="1-采集图片"><a href="#1-采集图片" class="headerlink" title="1. 采集图片"></a>1. 采集图片</h4><p>原始的图片多数采用各种摄像头采集，再整理为图片数据集。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1.如果使用`OpenCV`采集，可以通过`cv2.VideoCapture()`获取摄像头并捕捉画面中的图片。函数声明为：</span></span><br><span class="line">cv2.VideoCapture(摄像头来源)</span><br><span class="line"><span class="comment"># 传入的参数，指定0时为默认计算机默认摄像头，指定1可以更换来源。</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.获取捕获图像，函数为：</span></span><br><span class="line">cap.read()</span><br><span class="line"><span class="comment"># cap.read()返回一个布尔值(True/False)和一帧图像。</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.最后释放捕获对象，函数为：</span></span><br><span class="line">cap.release()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## 完整示例：</span></span><br><span class="line"><span class="comment"># 引入OpenCV库</span></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="comment"># 调用摄像头进行拍照</span></span><br><span class="line">cap = cv2.VideoCapture(<span class="number">0</span>)</span><br><span class="line"><span class="comment"># 获取一帧图片</span></span><br><span class="line"><span class="comment"># 如果捕获成功，代码中ret值为真，img为捕获的图像。</span></span><br><span class="line">ret, img = cap.read()</span><br><span class="line"><span class="comment"># 释放捕获对象</span></span><br><span class="line">cap.release()</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-读取图片"><a href="#2-读取图片" class="headerlink" title="2. 读取图片"></a>2. 读取图片</h4><p>通常我们使用采集完成的图片。在<code>OpenCV</code>中，使用<code>cv2.imread()</code>从文件中加载一张图片。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 函数声明</span></span><br><span class="line">cv2.imread(图片路径, 标记)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>第一个参数为图片路径，图片应该在当前的工作路径，或在指定的绝对路径下；</p>
+</li>
+<li><p>第二个参数指定图片被读取的方式：</p>
+<ul>
+<li><p><code>cv2.IMREAD_COLOR</code> : 读入彩色图像，默认模式；</p>
+</li>
+<li><p><code>cv2.IMREAD_GRAYSCALE</code> : 以灰度模式读入图像；</p>
+</li>
+<li><p><code>cv2.IMREAD_UNCHANGED</code> : 加载图像包含<code>alpha</code>通道。</p>
+<p>也可以，使用数字简约表示以上三种标记，分别为 <code>1</code>, <code>0</code> 或者 <code>-1</code>。</p>
+</li>
+</ul>
+</li>
+</ol>
+<p><strong>示例：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="comment"># 加载一张位于当前目录下的`images/girl.jpg`的图片</span></span><br><span class="line">image_path = <span class="string">&quot;images/girl.jpg&quot;</span></span><br><span class="line"><span class="comment"># 以灰度模式读取图片</span></span><br><span class="line">img = cv2.imread(image_path,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-展示图片"><a href="#3-展示图片" class="headerlink" title="3. 展示图片"></a>3. 展示图片</h4><p>读取图片之后，可以将图片展示到窗口。使用<code>cv2.imshow()</code>在窗口展示图片。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 函数声明</span></span><br><span class="line">imshow(窗口名称, 图片对象)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>第一个参数传入窗口的名字；</li>
+<li>第二个参数传入需要展示的图片对象。</li>
+</ul>
+<p>当窗口展示完之后，需要再调用<code>cv2.destroyAllWindows()</code>销毁所有的窗口。</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="comment"># 读取图片</span></span><br><span class="line">image_path = <span class="string">&quot;images/girl.jpg&quot;</span></span><br><span class="line">img = cv2.imread(image_path,<span class="number">1</span>)</span><br><span class="line"><span class="comment"># 窗口展示图片</span></span><br><span class="line">cv2.imshow(<span class="string">&#x27;cute girl&#x27;</span>,img)</span><br><span class="line"><span class="comment"># 等待用户关闭图片窗口</span></span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line"><span class="comment"># 销毁创建的所有窗口</span></span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-保存图片"><a href="#4-保存图片" class="headerlink" title="4. 保存图片"></a>4. 保存图片</h4><p>在完成图像的一系列操作之后，可以使用<code>cv2.imwrite()</code>将图片保存到本地</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 函数声明</span></span><br><span class="line">cv2.imwrite(图片路径, 图片对象)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>第一个参数为图片路径，图片应该在当前的工作路径，或在指定的绝对路径下；</li>
+<li>第二个参数为将要保存的图片对象。</li>
+</ul>
+<p><strong>示例：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="comment"># 读取图片</span></span><br><span class="line">image_path = <span class="string">&quot;images/girl.jpg&quot;</span></span><br><span class="line">img = cv2.imread(image_path,<span class="number">1</span>)</span><br><span class="line"><span class="comment"># 保存图片为girl-copy.png</span></span><br><span class="line">cv2.imwrite(<span class="string">&#x27;images/girl-copy.png&#x27;</span>,img)</span><br></pre></td></tr></table></figure>
+
+<h3 id="二、色彩空间及其转换"><a href="#二、色彩空间及其转换" class="headerlink" title="二、色彩空间及其转换"></a>二、色彩空间及其转换</h3><img src="https://www.educoder.net/attachments/download/225543" alt="预览大图" style="zoom: 25%;">
+
+<blockquote>
+<p><code>OpenCV</code>中默认的色彩空间是<code>BGR</code>。<code>BGR</code>与<code>RGB</code>的区别只是三个颜色信道的位置发生了变化，实际上原理相同。</p>
+<p>为什么是<code>BGR</code>而不是<code>RGB</code>呢？原因在于当时主流的摄像头制造商和软件供应商都普遍使用这种<code>BGR</code>格式，所以所以一开始时<code>OpenCV</code>采用的就是<code>BGR</code>，然后沿用至今。</p>
+</blockquote>
+<h4 id="1-HSV与HSL色彩空间"><a href="#1-HSV与HSL色彩空间" class="headerlink" title="1. HSV与HSL色彩空间"></a>1. HSV与HSL色彩空间</h4><p>在科学研究一般不采用<code>RGB</code>色彩空间，它将色调，亮度，饱和度三个量放在一起表示，很难分开，这样难以对其进行数字化的调整。所以为了更好的数字化处理颜色，提出了<code>HSV</code>，<code>HSL</code>两个色彩空间。</p>
+<ul>
+<li><p><code>HSV</code>色彩空间中，<code>H</code>是<code>色调(hue)</code>，<code>S</code>是<code>饱和度(saturation)</code>， <code>V</code>是<code>明度(value)</code>。</p>
+</li>
+<li><p><code>HSL</code>色彩空间中，<code>H</code>是<code>色调(hue)</code>，<code>S</code>是<code>饱和度(saturation)</code>，<code>L</code>是<code>亮度(lightness)</code>。</p>
+</li>
+</ul>
+<h4 id="2-灰度空间"><a href="#2-灰度空间" class="headerlink" title="2. 灰度空间"></a>2. 灰度空间</h4><p>在<code>OpenCV</code>的灰度空间中，和一般的色彩空间相同，每一个颜色都有三个量，但是只有第一个亮度有值，所以表示为<code>（亮度，0，0）</code>。其中，亮度是根据如下灰度公式计算而得：<code>Gray = R*0.299 + G*0.587 + B*0.114</code></p>
+<blockquote>
+<h5 id="为什么人脸识别需要先对图片进行灰度处理"><a href="#为什么人脸识别需要先对图片进行灰度处理" class="headerlink" title="为什么人脸识别需要先对图片进行灰度处理?"></a>为什么人脸识别需要先对图片进行灰度处理?</h5><p>识别人脸，最关键的因素是梯度，梯度代表着边缘，用灰度图计算梯度，可以简化矩阵, 提高运算速度。</p>
+<p>而颜色信息，很容易受到光照等因素的影响，同类的物体颜色有很多变化，所以颜色本身难以提供关键信息。</p>
+</blockquote>
+<h4 id="3-色彩空间转换"><a href="#3-色彩空间转换" class="headerlink" title="3. 色彩空间转换"></a>3. 色彩空间转换</h4><p>在<code>OpenCV</code>中有超过<code>150</code>种色彩空间转换的方法。但经常用到的是以下两种：</p>
+<ol>
+<li><code>BGR</code>空间到<code>Gray</code>空间的转换；</li>
+<li><code>BGR</code>空间到<code>HSV</code>空间 的转换。</li>
+</ol>
+<p>使用的函数为：<code>cv2.cvtColor()</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 函数声明</span></span><br><span class="line">cv2.cvtColor(图片对象，转换类型)</span><br></pre></td></tr></table></figure>
+
+<p>其中，转换类型，对于<code>BGR</code>到<code>Gray</code>的转换，使<code>cv2.COLOR_BGR2GRAY</code>类型。同样的，对于<code>BGR</code>到<code>HSV</code>的转换，使用<code>cv2.COLOR_BGR2HSV</code>类型。</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将图片的色彩空间由BGR转换为HSV</span></span><br><span class="line"><span class="comment"># 执行后output_img的色彩空间变成了HSV</span></span><br><span class="line">output_img = cv2.cvtColor(img,cv2.COLOR_BGR2HSV)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 可以通过以下代码获取到OpenCV提供的所有转换类型：</span></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">flags=[i <span class="keyword">for</span> <span class="keyword">in</span> dir(cv2) <span class="keyword">if</span> i startswith(<span class="string">&#x27;COLOR_&#x27;</span>)]</span><br><span class="line">print(flags)</span><br></pre></td></tr></table></figure>
+
+<h3 id="三、基于Harr特征的人脸检测分类器"><a href="#三、基于Harr特征的人脸检测分类器" class="headerlink" title="三、基于Harr特征的人脸检测分类器"></a>三、基于Harr特征的人脸检测分类器</h3><blockquote>
+<p>主要思想：</p>
+<p><code>OpenCV</code>的人脸检测，使用<code>Harr分类器</code>。该分类器采用的<code>Viola-Jones人脸检测算法</code>。它是在<code>2001</code>年由<code>Viola</code>和<code>Jones</code>提出的基于机器学习的人脸检测算法。</p>
+<p>算法首先需要大量的积极图片（包含人脸的图片）和消极图片（不包含人脸的图片）。然后从中提取类<code>Harr特征( Harr-like features)</code>，之所以称为<code>Harr</code> 分类器，是正是因为它使用了类<code>Harr</code>特征。最后，训练出一个级联检测器，用其来检测人脸。</p>
+</blockquote>
+<h4 id="1-类Harr特征"><a href="#1-类Harr特征" class="headerlink" title="1. 类Harr特征"></a>1. 类Harr特征</h4><p>图像中的特征通常是指，图片的像素点经过一系列的运算之后得到的结果，这些结果可能是向量、矩阵和多维数据等等。类<code>Harr</code>特征是一种反映图像的灰度变化的，像素分模块求差值的一种特征。</p>
+<h4 id="2-Harr特征类别"><a href="#2-Harr特征类别" class="headerlink" title="2. Harr特征类别"></a>2. Harr特征类别</h4><p>它分为三类：边缘特征、线性特征、中心特征和对角线特征。用黑色两种矩形框组成为特征模板。</p>
+<ol>
+<li><p>边缘特征</p>
+<p> <img src="https://www.educoder.net/api/attachments/224759" alt="预览大图"></p>
+</li>
+<li><p>线性特征</p>
+<p> <img src="https://www.educoder.net/api/attachments/224762" alt="预览大图"></p>
+</li>
+<li><p>中心线特征和对角线特征</p>
+<p> <img src="https://www.educoder.net/api/attachments/224763" alt="预览大图"></p>
+</li>
+</ol>
+<h4 id="3-特征值计算"><a href="#3-特征值计算" class="headerlink" title="3. 特征值计算"></a>3. 特征值计算</h4><p>特征模板的特征值计算的方式，是用黑色矩形像素总和的均值减去白色矩形像素总和的均值。</p>
+<p><img src="https://www.educoder.net/api/attachments/225174" alt="预览大图"></p>
+<p>例如，对于<code>4x4</code>的像素块。理想情况下，黑色和白色的像素块分布如下：</p>
+<p><img src="https://www.educoder.net/api/attachments/224782" alt="预览大图"></p>
+<p>符合边缘特征的情况(<code>a</code>)。但是通常情况，一张灰阶照片的黑白分布并非如此的明显，例如：</p>
+<p><img src="https://www.educoder.net/api/attachments/224783" alt="预览大图"></p>
+<p>根据公式， 第一张图特征值为<code>1</code>，第二张图特征值为<code>0.75-0.18=0.56</code>。</p>
+<p>一张图中，对于识别人脸，只有部分特征是有效的。例如，用下图中的特征模板可以看出，眉毛区域比额头要亮，鼻梁区域比眼镜区域要亮。嘴唇区域比牙齿区域要暗。这样的类 Harr 特征能很好的识别出人脸。</p>
+<p><img src="https://www.educoder.net/api/attachments/225549" alt="预览大图"></p>
+<p>为简化特征值计算，可以使用积分图算法。得到类 Harr 特征后，使用<code>AdaBoost</code>的方法选择出有效特征。最后再使用瀑布型级联检测器提高检测速度。其中，瀑布的每一层都是一个由<code>Adaboost算法</code>训练得到的强分类器。Harr人脸检测一个简单的动画过程如下：</p>
+<p><img src="https://www.educoder.net/api/attachments/225512" alt="预览大图"></p>
+<p>红色的搜索框不断移动，检测出是否包含人脸。一般来说，输入的图片会大于样本，为了检索出不同大小的目标，分类器可以按比例的改变自己的尺寸，对输入图片进行多次的扫描。</p>
+<h4 id="4-训练Harr分类器"><a href="#4-训练Harr分类器" class="headerlink" title="4. 训练Harr分类器"></a>4. 训练Harr分类器</h4><p>训练<code>Harr</code>分类器的主要步骤如下：</p>
+<ul>
+<li>搜集制作大量的“消极”图像；</li>
+<li>搜集制作大量“积极”图像，确保这些图像中包含要检测的对象；</li>
+<li>创建“积极”向量文件；</li>
+<li>使用<code>OpenCV</code>训练<code>Harr</code>分类器。</li>
+</ul>
+<p>因为训练需要花费较多的资源和时间，所以学习时，先使用<code>OpenCV</code>中已经训练好的<code>Harr</code>分类器。</p>
+<h4 id="5-使用Harr分类器检测人脸"><a href="#5-使用Harr分类器检测人脸" class="headerlink" title="5. 使用Harr分类器检测人脸"></a>5. 使用Harr分类器检测人脸</h4><p><code>OpenCV</code>中的人脸训练模型格式为<code>XML</code>，一般在<code>cv2</code>包中的<code>/data/haarcascades</code>或者直接在<code>/data</code>目录下 。在此我们使用<code>Harrcascade_frontalface_default.xml</code>模型检测人脸。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 声明分类器</span></span><br><span class="line">CascadeClassifier(模型文件路径)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用分类函数</span></span><br><span class="line">detectMultiScale(图片对象,scaleFactor, minNeighbors, minSize)</span><br></pre></td></tr></table></figure>
+
+<p>参数说明：</p>
+<ul>
+<li><p>图片对象：待识别图片对象；</p>
+</li>
+<li><p><code>scaleFactor</code>：图像缩放比例；</p>
+</li>
+<li><p><code>minNeighbors</code>：对特征检测点周边多少有效点同时检测，这样可避免因选取的特征检测点太小而导致遗漏；</p>
+</li>
+<li><p><code>minSize</code>：特征检测点的最小尺寸，可选参数。</p>
+</li>
+</ul>
+<p><strong>示例：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="comment"># 读取图片</span></span><br><span class="line">img = cv.imread(<span class="string">&#x27;face.jpg&#x27;</span>)</span><br><span class="line"><span class="comment"># 转换为灰度图片</span></span><br><span class="line">gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)</span><br><span class="line"><span class="comment"># 人脸检测器</span></span><br><span class="line">face_cascade = cv.CascadeClassifier(<span class="string">&#x27;path-of-harrcascade_frontalface_default.xml&#x27;</span>)</span><br><span class="line"><span class="comment"># 识别人脸</span></span><br><span class="line">faces = face_cascade.detectMultiScale(gray, <span class="number">1.3</span>, <span class="number">5</span>)</span><br><span class="line"><span class="keyword">for</span> (x,y,w,h) <span class="keyword">in</span> faces:</span><br><span class="line">    print(x,y,w,h)</span><br></pre></td></tr></table></figure>
+
+<p>其中，图片坐标系以左上角为原点，<code>x,y</code>代表人脸区域左上角坐标，<code>w</code>代表宽度，<code>h</code>代表高度。如下图所示：</p>
+<img src="https://www.educoder.net/api/attachments/225718" alt="预览大图" style="zoom:50%;">
+
+
+
+<h3 id="四、绘制人脸与人眼区域"><a href="#四、绘制人脸与人眼区域" class="headerlink" title="四、绘制人脸与人眼区域"></a>四、绘制人脸与人眼区域</h3><h4 id="1-OpenCV绘制矩形"><a href="#1-OpenCV绘制矩形" class="headerlink" title="1. OpenCV绘制矩形"></a>1. OpenCV绘制矩形</h4><p>在<code>OpenCV</code>中，可以使用<code>cv2.rectangle()</code>在图片中绘制矩形区域。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 函数声明</span></span><br><span class="line">cv2.rectangle(图片对象,矩形左上角的坐标点，矩形右下角的坐标点，颜色(B,G,R)，边框线的粗度)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 红色人脸边框，指定左上角坐标为(x,y)，右上角坐标为(x+w,y+h)，颜色设定红色，边框线粗度为2。</span></span><br><span class="line">cv2.rectangle(img,(x,y),(x+w,y+h)(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>),<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-使用OpenCV绘制图片中人脸区域"><a href="#2-使用OpenCV绘制图片中人脸区域" class="headerlink" title="2. 使用OpenCV绘制图片中人脸区域"></a>2. 使用OpenCV绘制图片中人脸区域</h4><p>使用<code>OpenCV</code>分类器检测人脸之后，一张图片中可能包含多个人脸，所以我们对每一个识别到的人脸都绘制对应的矩形框。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="comment"># 读取图片</span></span><br><span class="line">img = cv2.imread(<span class="string">&#x27;images/girl.jpg&#x27;</span>)</span><br><span class="line"><span class="comment"># 转换为灰度图片</span></span><br><span class="line">gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</span><br><span class="line"><span class="comment"># 人脸检测器</span></span><br><span class="line">face_cascade = cv2.CascadeClassifier(<span class="string">&#x27;path-of-haarcascade_frontalface_default.xml&#x27;</span>)</span><br><span class="line"><span class="comment"># 识别人脸</span></span><br><span class="line">faces = face_cascade.detectMultiScale(gray, <span class="number">1.3</span>, <span class="number">5</span>)</span><br><span class="line"><span class="comment"># 绘制人脸区域</span></span><br><span class="line"><span class="keyword">for</span> (x,y,w,h) <span class="keyword">in</span> faces:</span><br><span class="line">    cv2.rectangle(img,(x,y),(x+w,y+h),(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>),<span class="number">2</span>)</span><br><span class="line">    <span class="comment">#灰度图片的脸部区域</span></span><br><span class="line">    face_grays = gray[y:y+h, x:x+w]</span><br><span class="line">    <span class="comment">#原图像的脸部区域</span></span><br><span class="line">    face_areas = img[y:y+h, x:x+w]</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-使用OpenCV绘制人脸区域中眼睛区域"><a href="#3-使用OpenCV绘制人脸区域中眼睛区域" class="headerlink" title="3. 使用OpenCV绘制人脸区域中眼睛区域"></a>3. 使用OpenCV绘制人脸区域中眼睛区域</h4><p>进一步，==在识别人脸的基础上==，使用官方提供的<code>haarcascade_eye.xml</code>人眼检测模型，识别出人眼并绘制到图片上。如果单独使用<code>OpenCV</code>人眼检测模型，来识别出整个图片中的人眼区域，效果不是很好。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="comment"># 读取图片</span></span><br><span class="line">img = cv2.imread(<span class="string">&#x27;images/girl.jpg&#x27;</span>)</span><br><span class="line"><span class="comment"># 转换为灰度图片</span></span><br><span class="line">gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</span><br><span class="line"><span class="comment"># 人脸检测器</span></span><br><span class="line">face_cascade = cv2.CascadeClassifier(<span class="string">&#x27;path-of-haarcascade_frontalface_default.xml&#x27;</span>)</span><br><span class="line"><span class="comment"># 识别人脸</span></span><br><span class="line">faces = face_cascade.detectMultiScale(gray, <span class="number">1.3</span>, <span class="number">5</span>)</span><br><span class="line"><span class="comment"># 绘制人脸区域</span></span><br><span class="line"><span class="keyword">for</span> (x,y,w,h) <span class="keyword">in</span> faces:</span><br><span class="line">    cv2.rectangle(img,(x,y),(x+w,y+h),(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>),<span class="number">2</span>)</span><br><span class="line">    <span class="comment">#灰度图片的脸部区域</span></span><br><span class="line">    face_gray = gray[y:y+h, x:x+w]</span><br><span class="line">    <span class="comment">#原图像的脸部区域</span></span><br><span class="line">    face_areas = img[y:y+h, x:x+w]</span><br><span class="line">    eye_cascade = cv2.CascadeClassifier(<span class="string">&#x27;path-of-haarcascade_eye.xml&#x27;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 识别人眼：使用原图的灰度图容易识别出错</span></span><br><span class="line">    <span class="comment"># eyes = eye_cascade.detectMultiScale(gray)</span></span><br><span class="line">    <span class="comment"># 使用人脸部分的灰度图，降低出错率</span></span><br><span class="line">    eyes = eye_cascade.detectMultiScale(face_gray)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (ex,ey,ew,eh) <span class="keyword">in</span> eyes:</span><br><span class="line">        <span class="comment"># 绘制人眼：在原图像区域，容易出错</span></span><br><span class="line">        <span class="comment"># cv2.rectangle(img,(ex,ey),(ex+ew,ey+eh),(0,255,0),2)</span></span><br><span class="line">        <span class="comment"># 一般在原图像的脸部区域绘制眼睛区域</span></span><br><span class="line">        cv2.rectangle(face_area, (ex,ey), (ex+ew,ey+eh), (<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>), <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我喝冰阔落<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/zfb.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wx.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -219,16 +415,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/10/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94OpenCV%E7%AF%87/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/10/10/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94OpenCV%E7%AF%87/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/07/30/Docker%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Docker学习笔记（一）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -243,10 +498,33 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">人脸识别基本过程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#OpenCV"><span class="toc-number">1.1.</span> <span class="toc-text">OpenCV</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%9B%BE%E7%89%87%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">1.1.1.</span> <span class="toc-text">一、图片基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E9%87%87%E9%9B%86%E5%9B%BE%E7%89%87"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">1. 采集图片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E8%AF%BB%E5%8F%96%E5%9B%BE%E7%89%87"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">2. 读取图片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87"><span class="toc-number">1.1.1.3.</span> <span class="toc-text">3. 展示图片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E4%BF%9D%E5%AD%98%E5%9B%BE%E7%89%87"><span class="toc-number">1.1.1.4.</span> <span class="toc-text">4. 保存图片</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4%E5%8F%8A%E5%85%B6%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.1.2.</span> <span class="toc-text">二、色彩空间及其转换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-HSV%E4%B8%8EHSL%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">1. HSV与HSL色彩空间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E7%81%B0%E5%BA%A6%E7%A9%BA%E9%97%B4"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">2. 灰度空间</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E9%9C%80%E8%A6%81%E5%85%88%E5%AF%B9%E5%9B%BE%E7%89%87%E8%BF%9B%E8%A1%8C%E7%81%B0%E5%BA%A6%E5%A4%84%E7%90%86"><span class="toc-number">1.1.2.2.1.</span> <span class="toc-text">为什么人脸识别需要先对图片进行灰度处理?</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.1.2.3.</span> <span class="toc-text">3. 色彩空间转换</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%9F%BA%E4%BA%8EHarr%E7%89%B9%E5%BE%81%E7%9A%84%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B%E5%88%86%E7%B1%BB%E5%99%A8"><span class="toc-number">1.1.3.</span> <span class="toc-text">三、基于Harr特征的人脸检测分类器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E7%B1%BBHarr%E7%89%B9%E5%BE%81"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">1. 类Harr特征</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Harr%E7%89%B9%E5%BE%81%E7%B1%BB%E5%88%AB"><span class="toc-number">1.1.3.2.</span> <span class="toc-text">2. Harr特征类别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E7%89%B9%E5%BE%81%E5%80%BC%E8%AE%A1%E7%AE%97"><span class="toc-number">1.1.3.3.</span> <span class="toc-text">3. 特征值计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E8%AE%AD%E7%BB%83Harr%E5%88%86%E7%B1%BB%E5%99%A8"><span class="toc-number">1.1.3.4.</span> <span class="toc-text">4. 训练Harr分类器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E4%BD%BF%E7%94%A8Harr%E5%88%86%E7%B1%BB%E5%99%A8%E6%A3%80%E6%B5%8B%E4%BA%BA%E8%84%B8"><span class="toc-number">1.1.3.5.</span> <span class="toc-text">5. 使用Harr分类器检测人脸</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E7%BB%98%E5%88%B6%E4%BA%BA%E8%84%B8%E4%B8%8E%E4%BA%BA%E7%9C%BC%E5%8C%BA%E5%9F%9F"><span class="toc-number">1.1.4.</span> <span class="toc-text">四、绘制人脸与人眼区域</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-OpenCV%E7%BB%98%E5%88%B6%E7%9F%A9%E5%BD%A2"><span class="toc-number">1.1.4.1.</span> <span class="toc-text">1. OpenCV绘制矩形</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8OpenCV%E7%BB%98%E5%88%B6%E5%9B%BE%E7%89%87%E4%B8%AD%E4%BA%BA%E8%84%B8%E5%8C%BA%E5%9F%9F"><span class="toc-number">1.1.4.2.</span> <span class="toc-text">2. 使用OpenCV绘制图片中人脸区域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E4%BD%BF%E7%94%A8OpenCV%E7%BB%98%E5%88%B6%E4%BA%BA%E8%84%B8%E5%8C%BA%E5%9F%9F%E4%B8%AD%E7%9C%BC%E7%9D%9B%E5%8C%BA%E5%9F%9F"><span class="toc-number">1.1.4.3.</span> <span class="toc-text">3. 使用OpenCV绘制人脸区域中眼睛区域</span></a></li></ol></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
 
+
+  
+  
+  
+
+  
+
+  
+
+  
 
 
 
@@ -265,343 +543,13 @@ if(true){
     repo: 'yfaqh.github.io',
     owner: 'yfaqh',
     admin: ['yfaqh'],
-    id: '',
+    id: 'Sat Oct 10 2020 16:55:39 GMT+0800',
     distractionFreeMode: 'true'
 })
 gitalk.render('gitalk-container') 
 }
 </script>
 
-
-
-  
-    <article id="post-Docker学习笔记（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/30/Docker%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">Docker学习笔记（一）</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/30/Docker%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
-	  <time datetime="2020-07-30T05:48:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="学习路径"><a href="#学习路径" class="headerlink" title="学习路径"></a>学习路径</h2><ul>
-<li>Docker概述</li>
-<li>Docker安装</li>
-<li>Docker命令<ol>
-<li>镜像命令</li>
-<li>容器命令</li>
-<li>操作命令</li>
-<li>……</li>
-</ol>
-</li>
-<li>Docker镜像</li>
-<li>容器数据卷</li>
-<li>DockerFile</li>
-<li>Docker网络原理</li>
-<li>IDEA整合Docker</li>
-<li>Docker Compose</li>
-<li>Docker Swarm</li>
-<li>CI/CD jenkins</li>
-</ul>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/30/Docker%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  <div id="gitalk-container"></div>
-  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-
-<script type="text/javascript">
-
-if(true){
-    var gitalk = new Gitalk({
-    clientID: '4bc6749491a33131479d',
-    clientSecret: '19cabf90cf57e64d43b9950efdb758372016ee19',
-    repo: 'yfaqh.github.io',
-    owner: 'yfaqh',
-    admin: ['yfaqh'],
-    id: '',
-    distractionFreeMode: 'true'
-})
-gitalk.render('gitalk-container') 
-}
-</script>
-
-
-
-  
-    <article id="post-我在Hexo上的第一篇博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/05/%E6%88%91%E5%9C%A8Hexo%E4%B8%8A%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">我在Hexo上的第一篇博客</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/05/%E6%88%91%E5%9C%A8Hexo%E4%B8%8A%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-	  <time datetime="2020-07-05T13:23:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1379215363&auto=0&height=66"></iframe>
-
-<p>今天家里下了很大的雨，雨下了很久，久久不停的雨让心绪无法平静下来……</p>
-<p>也就是在今天，在<a target="_blank" rel="noopener" href="https://space.bilibili.com/384068749">羊哥</a>的帮助下，我正是拥有了自己的个人博客站。虽说是一个静态的，托管在GitHub上的一个个人博客。但是这只是开始，未来有精力的话会开发一个属于正在属于自己的博客站。</p>
-<p>除了自己的学习心得和经验分享以外，这里将会是我突发奇想或者惆怅时随笔的归处。</p>
-<p>这个个人小站基本的功能都已具备，在未来的日子里我会继续完善这个个人站的功能，一起期待吧^_^</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/05/%E6%88%91%E5%9C%A8Hexo%E4%B8%8A%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  <div id="gitalk-container"></div>
-  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-
-<script type="text/javascript">
-
-if(true){
-    var gitalk = new Gitalk({
-    clientID: '4bc6749491a33131479d',
-    clientSecret: '19cabf90cf57e64d43b9950efdb758372016ee19',
-    repo: 'yfaqh.github.io',
-    owner: 'yfaqh',
-    admin: ['yfaqh'],
-    id: '',
-    distractionFreeMode: 'true'
-})
-gitalk.render('gitalk-container') 
-}
-</script>
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/05/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/05/hello-world/" class="archive-article-date">
-	  <time datetime="2020-07-05T13:09:11.478Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/05/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  <div id="gitalk-container"></div>
-  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-
-<script type="text/javascript">
-
-if(true){
-    var gitalk = new Gitalk({
-    clientID: '4bc6749491a33131479d',
-    clientSecret: '19cabf90cf57e64d43b9950efdb758372016ee19',
-    repo: 'yfaqh.github.io',
-    owner: 'yfaqh',
-    admin: ['yfaqh'],
-    id: '',
-    distractionFreeMode: 'true'
-})
-gitalk.render('gitalk-container') 
-}
-</script>
-
-
-
-  
-  
 
 
           </div>
@@ -624,8 +572,8 @@ gitalk.render('gitalk-container')
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
