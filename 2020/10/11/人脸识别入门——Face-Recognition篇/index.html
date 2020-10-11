@@ -6,15 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 扬帆爱起航的个人站</title>
+  <title>人脸识别入门——Face Recognition篇 | 扬帆爱起航的个人站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="扬帆爱起航的个人站">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="Face Recognition 前面的Dlib库，它是一个在工业界和学术界广受好评，极其优秀的库。而Face Recognition基于Dlib库做了高度封装，当之无愧的称之为世界上最简洁的人脸识别库。 学习完基础的原理以及Dlib库，就好比学会了“走路”；而Face Recognition库的高效与简洁，可以彻底“跑起来”。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="人脸识别入门——Face Recognition篇">
+<meta property="og:url" content="http://yoursite.com/2020/10/11/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94Face-Recognition%E7%AF%87/index.html">
 <meta property="og:site_name" content="扬帆爱起航的个人站">
+<meta property="og:description" content="Face Recognition 前面的Dlib库，它是一个在工业界和学术界广受好评，极其优秀的库。而Face Recognition基于Dlib库做了高度封装，当之无愧的称之为世界上最简洁的人脸识别库。 学习完基础的原理以及Dlib库，就好比学会了“走路”；而Face Recognition库的高效与简洁，可以彻底“跑起来”。">
 <meta property="og:locale">
+<meta property="og:image" content="https://www.educoder.net/api/attachments/231853">
+<meta property="og:image" content="https://www.educoder.net/api/attachments/231859">
+<meta property="og:image" content="https://www.educoder.net/api/attachments/231870">
+<meta property="og:image" content="http://yoursite.com/2020/10/11/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94Face-Recognition%E7%AF%87/image-20200912000737466.png">
+<meta property="og:image" content="https://www.educoder.net/api/attachments/231872">
+<meta property="og:image" content="https://www.educoder.net/api/attachments/231915">
+<meta property="og:image" content="https://www.educoder.net/api/attachments/231917">
+<meta property="article:published_time" content="2020-10-11T12:21:30.000Z">
+<meta property="article:modified_time" content="2020-10-11T12:21:30.000Z">
 <meta property="article:author" content="扬帆爱起航">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="人脸识别">
+<meta property="article:tag" content="Face Recognition">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.educoder.net/api/attachments/231853">
   
     <link rel="alternative" href="/atom.xml" title="扬帆爱起航的个人站" type="application/atom+xml">
   
@@ -158,36 +173,193 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-人脸识别入门——Face-Recognition篇" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/11/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94Face-Recognition%E7%AF%87/" class="archive-article-date">
-	  <time datetime="2020-10-11T12:21:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-11</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/11/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94Face-Recognition%E7%AF%87/">人脸识别入门——Face Recognition篇</a>
+    <h1 class="article-title" itemprop="name">
+      人脸识别入门——Face Recognition篇
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/10/11/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94Face-Recognition%E7%AF%87/" class="archive-article-date">
+	  <time datetime="2020-10-11T12:21:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Face-Recognition"><a href="#Face-Recognition" class="headerlink" title="Face Recognition"></a>Face Recognition</h2><blockquote>
+<p>前面的<code>Dlib</code>库，它是一个在工业界和学术界广受好评，极其优秀的库。而<code>Face Recognition</code>基于<code>Dlib</code>库做了高度封装，当之无愧的称之为世界上最简洁的人脸识别库。</p>
+<p>学习完基础的原理以及<code>Dlib</code>库，就好比学会了“走路”；而<code>Face Recognition</code>库的高效与简洁，可以彻底“跑起来”。</p>
+</blockquote>
+<a id="more"></a>
+
+<h3 id="一、人脸检测"><a href="#一、人脸检测" class="headerlink" title="一、人脸检测"></a>一、人脸检测</h3><img src="https://www.educoder.net/api/attachments/231853" alt="预览大图" style="zoom: 67%;">
+
+<h4 id="1-读取照片"><a href="#1-读取照片" class="headerlink" title="1. 读取照片"></a>1. 读取照片</h4><p>在<code>face rcognition</code>中使用 <code>load_image_file</code> 函数读取图片：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">load_image_file(file, mode=<span class="string">&#x27;RGB&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>其中，各个参数的含义如下：</p>
+<ul>
+<li><code>file</code>：带检测的图片文件路径；</li>
+<li><code>mode</code>：可选值，默认为<code>RGB</code>，也可以指定为<code>L</code> ，代表转化为灰度照片。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># eg</span></span><br><span class="line">image = face_recognition.load_image_file(<span class="string">&quot;./images/Sheldon.jpg&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-检测照片中人脸并返回人脸位置"><a href="#2-检测照片中人脸并返回人脸位置" class="headerlink" title="2. 检测照片中人脸并返回人脸位置"></a>2. 检测照片中人脸并返回人脸位置</h4><p>使用<code>face_locations</code>函数检测人脸：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">face_locations(img, number_of_times_to_upsample=<span class="number">1</span>, model=<span class="string">&quot;hog&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>其中，各个参数的含义如下：</p>
+<ul>
+<li><code>img</code>：待检测的图片对象；</li>
+<li><code>number_of_times_to_upsample</code>：可选值，为寻找人脸进行多少次图片变换，值越大，越能找到更小的人脸；</li>
+<li><code>model</code>：可选值，默认使用<code>hog</code>模式, <code>hog</code> 模式在<code>CPU</code>上运行表现更好；如果有<code>GPU</code>加速，也可以指定为<code>cnn</code>模式。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># eg</span></span><br><span class="line">face_locations = face_recognition.face_locations(image)</span><br></pre></td></tr></table></figure>
+
+<p><strong>完整示例</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 加载face_recognition库</span></span><br><span class="line"><span class="keyword">import</span> face_recognition</span><br><span class="line"><span class="comment"># 读取照片</span></span><br><span class="line">image = face_recognition.load_image_file(<span class="string">&quot;./images/Sheldon.jpg&quot;</span>)</span><br><span class="line"><span class="comment"># 获取检测到的人脸位置</span></span><br><span class="line">face_locations = face_recognition.face_locations(image)</span><br><span class="line"><span class="comment"># 打印人脸位置</span></span><br><span class="line">print(face_locations)</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-绘制人脸区域"><a href="#3-绘制人脸区域" class="headerlink" title="3. 绘制人脸区域"></a>3. 绘制人脸区域</h4><p>使用OPenCV绘制人脸区域：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">for</span> face_location <span class="keyword">in</span> face_locations:</span><br><span class="line">    top, right, bottom, left = face_location</span><br><span class="line">    cv2.rectangle(image, (left, top), (right, bottom), (<span class="number">0</span>, <span class="number">255</span>, <span class="number">0</span>), <span class="number">2</span>)</span><br><span class="line"><span class="comment"># Show the picture</span></span><br><span class="line">image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)</span><br><span class="line">cv2.imshow(<span class="string">&quot;sd.png&quot;</span>, image_rgb)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<img src="https://www.educoder.net/api/attachments/231859" alt="预览大图" style="zoom:67%;">
+
+<h3 id="二、人脸特征点获取"><a href="#二、人脸特征点获取" class="headerlink" title="二、人脸特征点获取"></a>二、人脸特征点获取</h3><img src="https://www.educoder.net/api/attachments/231870" alt="预览大图" style="zoom: 67%;">
+
+<h4 id="1-读取照片-1"><a href="#1-读取照片-1" class="headerlink" title="1. 读取照片"></a>1. 读取照片</h4><p>方法同一.1</p>
+<h4 id="2-获取照片中人脸特征点"><a href="#2-获取照片中人脸特征点" class="headerlink" title="2. 获取照片中人脸特征点"></a>2. 获取照片中人脸特征点</h4><p>可以使用<code>face_landmarks</code>函数，获取人脸中特征点：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">face_landmarks(face_image, face_locations=<span class="literal">None</span>, model=<span class="string">&quot;large&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>其中，各个参数含义如下：</p>
+<ul>
+<li><code>face_image</code>：图片对象；</li>
+<li><code>face_locations</code>：可选，默认为空，也可以指定要识别的人脸区域位置；</li>
+<li><code>model</code>：可选，不指定时的默认值为 <code>large</code>，另一个值为 <code>small</code>。<code>large</code> 代表识别<code>68</code>个特征点，<code>small</code> 代表识别<code>5</code>个特征点。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># eg</span></span><br><span class="line">face_landmarks_list = face_recognition.face_landmarks(image)</span><br></pre></td></tr></table></figure>
+
+<p><strong>完整代码示例：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入face_recognition库</span></span><br><span class="line"><span class="keyword">import</span> face_recognition</span><br><span class="line"><span class="comment"># 读取照片</span></span><br><span class="line">image = face_recognition.load_image_file(<span class="string">&quot;./images/face.jpg&quot;</span>)</span><br><span class="line"><span class="comment"># 获取中铺中人脸特征点</span></span><br><span class="line">face_landmarks_list = face_recognition.face_landmarks(image)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/10/11/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94Face-Recognition%E7%AF%87/image-20200912000737466.png" alt="image-20200912000737466"></p>
+<p>上面运行的结果对于图片里的一个人都有很多特征值。可以看出，返回的结果是一个一位数组，数组的元素为 <code>JSON</code> 格式，包含的特征区域细分为：</p>
+<ul>
+<li>脸颊 <code>chin</code>；</li>
+<li>左眼眉毛 <code>left_eyebrow</code>；</li>
+<li>右眼眉毛 <code>right_eyebrow</code>；</li>
+<li>鼻梁 <code>nose_bridge</code>；</li>
+<li>鼻尖 <code>nose_tip</code>；</li>
+<li>左眼 <code>left_eye</code>；</li>
+<li>右眼 <code>right_eye</code>；</li>
+<li>上嘴唇 <code>top_lip</code>；</li>
+<li>下嘴唇 <code>bottom_lip</code>。</li>
+</ul>
+<p>如果指定为 <code>small</code> 模式：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">face_landmarks_list = face_recognition.face_landmarks(image, model=<span class="string">&#x27;small&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-绘制特征点"><a href="#3-绘制特征点" class="headerlink" title="3. 绘制特征点"></a>3. 绘制特征点</h4><p>依然是用到OpenCV，在前面获取到人脸特征点的基础代码上，加上下面的绘制代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> face_landmarks <span class="keyword">in</span> face_landmarks_list:</span><br><span class="line">    <span class="keyword">for</span> facial_feature <span class="keyword">in</span> face_landmarks.keys():</span><br><span class="line">        <span class="keyword">for</span> pt_pos <span class="keyword">in</span> face_landmarks[facial_feature]:</span><br><span class="line">                cv2.circle(image, pt_pos, <span class="number">1</span>, (<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>), <span class="number">2</span>)</span><br><span class="line"><span class="comment"># 展示图片</span></span><br><span class="line">image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)</span><br><span class="line">cv2.imshow(<span class="string">&quot;laugh.jpg&quot;</span>, image_rgb)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>结果：</strong></p>
+<img src="https://www.educoder.net/api/attachments/231872" alt="预览大图" style="zoom:67%;">
+
+<h3 id="三、人脸识别"><a href="#三、人脸识别" class="headerlink" title="三、人脸识别"></a>三、人脸识别</h3><h4 id="1-读取图片"><a href="#1-读取图片" class="headerlink" title="1. 读取图片"></a>1. 读取图片</h4><p>与之前不同，因为是识别图片，所以我们需要分别读取已知名字图片和未知名字图片：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">known_image = face_recognition.load_image_file(<span class="string">&quot;./step3/images/cyx2.jpg&quot;</span>)</span><br><span class="line">unknown_image = face_recognition.load_image_file(<span class="string">&quot;./step3/images/cyx4.jpg&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-获取128维的特征向量"><a href="#2-获取128维的特征向量" class="headerlink" title="2. 获取128维的特征向量"></a>2. 获取128维的特征向量</h4><p>可以使用 <code>face_encodings</code> 函数对人脸进行编码，获取到对应<code>128</code>维的人脸特征向量：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">face_encodings(face_image, known_face_locations=<span class="literal">None</span>, num_jitters=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<p>其中，各个参数的含义如下：</p>
+<ul>
+<li><code>face_image</code>：包含单个或者多个人脸的图片对象；</li>
+<li><code>known_face_locations</code>：可选值，已经知道名字的人脸位置；</li>
+<li><code>num_jitters</code>：当计算编码时，进行多少次的<code>re-sample</code>操作，次数越多，越精准（但同时会更慢，例如，值为<code>100</code>时，会慢<code>100</code>倍）。</li>
+</ul>
+<p>分别对已知名字的人脸和未知名字的人脸，进行编码，示例代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cyx_encoding = face_recognition.face_encodings(known_image)[<span class="number">0</span>]</span><br><span class="line">unknown_encoding = face_recognition.face_encodings(unknown_image)[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-比较特征向量，识别人脸"><a href="#3-比较特征向量，识别人脸" class="headerlink" title="3. 比较特征向量，识别人脸"></a>3. 比较特征向量，识别人脸</h4><p>最后，使用 <code>compare_faces</code>函数，比较已经人脸与未知人脸之间特征向量：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compare_faces(known_face_encodings, face_encoding_to_check, tolerance=<span class="number">0.6</span>)</span><br></pre></td></tr></table></figure>
+
+<p>其中，各个参数的含义如下：</p>
+<ul>
+<li><code>known_face_encodings</code>：已知人脸特征向量的数组；</li>
+<li><code>face_encoding_to_check</code>：一个用于与已知向量相比较的未知人脸特征向量；</li>
+<li><code>tolerance</code>：容错率，默认的容错率是<code>0.6</code>，容错率越低，识别越严格准确。</li>
+</ul>
+<p>如果未知图片高于指定的容错率阈值，将会返回真(<code>True</code>)；如果低于指定的阈值，将会返回假(<code>False</code>)。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">results = face_recognition.compare_faces([cyz_encoding], unknown_encoding, tolerance=<span class="number">0.4</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>完整示例：</strong></p>
+<img src="https://www.educoder.net/api/attachments/231915" alt="预览大图" style="zoom: 67%;">
+
+<img src="https://www.educoder.net/api/attachments/231917" alt="预览大图" style="zoom: 67%;">
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> face_recognition</span><br><span class="line"><span class="comment"># 导入图片</span></span><br><span class="line">known_image_cyz = face_recognition.load_image_file(</span><br><span class="line">    <span class="string">&quot;./step3/images/cyx2.jpg&quot;</span>)</span><br><span class="line">unknown_image = face_recognition.load_image_file(<span class="string">&quot;./step3/images/cyx3.jpg&quot;</span>)</span><br><span class="line"><span class="comment"># 编码获取128维特征向量</span></span><br><span class="line">cyz_encoding = face_recognition.face_encodings(known_image_cyz)[<span class="number">0</span>]</span><br><span class="line">unknown_encoding = face_recognition.face_encodings(unknown_image)[<span class="number">0</span>]</span><br><span class="line"><span class="comment"># 比较特征向量值，识别人脸</span></span><br><span class="line">results = face_recognition.compare_faces([cyz_encoding], unknown_encoding, tolerance=<span class="number">0.4</span>)</span><br><span class="line"><span class="comment"># 打印结果</span></span><br><span class="line">print(results)</span><br></pre></td></tr></table></figure>
+
+<p>运行结果为<code>[True]</code>，人脸识别结果正确。</p>
+<h3 id="四、人脸识别绘制并展示"><a href="#四、人脸识别绘制并展示" class="headerlink" title="四、人脸识别绘制并展示"></a>四、人脸识别绘制并展示</h3><h4 id="1-导入已知图片"><a href="#1-导入已知图片" class="headerlink" title="1. 导入已知图片"></a>1. 导入已知图片</h4><p>同样是使用<code>face rcognition</code>中的 <code>load_image_file</code> 函数读取图片：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">known_image_cc = face_recognition.load_image_file(<span class="string">&quot;./step3/know_image/Caocao.jpg&quot;</span>)</span><br><span class="line">known_image_xy = face_recognition.load_image_file(<span class="string">&quot;./step3/know_image/XunYu.jpg&quot;</span>)</span><br><span class="line">known_image_smy = face_recognition.load_image_file(<span class="string">&quot;./step3/know_image/SiMayi.jpg&quot;</span>)</span><br><span class="line">known_image_zch= face_recognition.load_image_file(<span class="string">&quot;./step3/know_image/ZhangChunhua.jpg&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-编码已知图片"><a href="#2-编码已知图片" class="headerlink" title="2. 编码已知图片"></a>2. 编码已知图片</h4><p>使用<code>face_encodings</code>对图片进行编码，获取<code>128</code>维特征向量。之后需要遍历已知照片来识别，所以将人脸的特征向量存为数组。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 对图片进行编码，获取128维特征向量</span></span><br><span class="line">cc_encoding = face_recognition.face_encodings(known_image_cc)[<span class="number">0</span>]</span><br><span class="line">xy_encoding = face_recognition.face_encodings(known_image_xy)[<span class="number">0</span>]</span><br><span class="line">smy_encoding = face_recognition.face_encodings(known_image_smy)[<span class="number">0</span>]</span><br><span class="line">cyz_encoding = face_recognition.face_encodings(known_image_zch)[<span class="number">0</span>]</span><br><span class="line"><span class="comment"># 存为数组以便之后识别</span></span><br><span class="line">known_faces = [</span><br><span class="line">    cc_encoding,</span><br><span class="line">    xy_encoding,</span><br><span class="line">    smy_encoding,</span><br><span class="line">    zch_encoding</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-导入未知图片"><a href="#3-导入未知图片" class="headerlink" title="3. 导入未知图片"></a>3. 导入未知图片</h4><p>准备好已知图片信息，加载将要识别的未知图片：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 加载待识别图片</span></span><br><span class="line">unknown_image_1 = face_recognition.load_image_file(</span><br><span class="line">    <span class="string">&quot;./step3/unknown_image/Caocao.jpg&quot;</span>)</span><br><span class="line">unknown_image_2 = face_recognition.load_image_file(</span><br><span class="line">    <span class="string">&quot;./step3/unknown_image/SiMayi.jpg&quot;</span>)</span><br><span class="line">unknown_image_3 = face_recognition.load_image_file(</span><br><span class="line">    <span class="string">&quot;./step3/unknown_image/ZhangChunhua.jpg&quot;</span>)</span><br><span class="line">unknown_image_4 = face_recognition.load_image_file(</span><br><span class="line">    <span class="string">&quot;./step3/unknown_image/XunYu.jpg&quot;</span>)</span><br><span class="line">unknown_faces = [</span><br><span class="line">    unknown_image_1, </span><br><span class="line">    unknown_image_2, </span><br><span class="line">    unknown_image_3,</span><br><span class="line">    unknown_image_4</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-遍历识别"><a href="#4-遍历识别" class="headerlink" title="4. 遍历识别"></a>4. 遍历识别</h4><p>遍历未知图片，对每一种未知图片，获取其人脸位置和特征向量。将得到的位置图片特征向量与所有已知的特征向量进行比较，判断是否为同一个人。需要注意的是这里我们设置 <code>tolerance</code> 为<code>0.5</code>，实际应用时，可以根据自己对准确度的要求，进行调整。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 初始化一些变量</span></span><br><span class="line">face_locations = []</span><br><span class="line">face_encodings = []</span><br><span class="line">face_names = []</span><br><span class="line">frame_number = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> frame <span class="keyword">in</span> unknown_faces:</span><br><span class="line">    face_names = []</span><br><span class="line">    <span class="comment"># 获取人脸区域位置</span></span><br><span class="line">    face_locations = face_recognition.face_locations(frame)</span><br><span class="line">    <span class="comment"># 对图片进行编码，获取128维特征向量</span></span><br><span class="line">    face_encodings = face_recognition.face_encodings(frame, face_locations)</span><br><span class="line">    <span class="keyword">for</span> face_encoding <span class="keyword">in</span> face_encodings:</span><br><span class="line">        <span class="comment"># 识别图片中人脸是否匹配已知图片</span></span><br><span class="line">        match = face_recognition.compare_faces(</span><br><span class="line">            known_faces, face_encoding, tolerance=<span class="number">0.5</span>)</span><br></pre></td></tr></table></figure>
+
+<p>得到是否是同一个人的结果之后，我们可以对应其姓名，添加到<code>face_names</code>数组中：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="literal">None</span></span><br><span class="line"><span class="keyword">if</span> match[<span class="number">0</span>]:</span><br><span class="line">    name = <span class="string">&quot;Caocao&quot;</span></span><br><span class="line"><span class="keyword">elif</span> match[<span class="number">1</span>]:</span><br><span class="line">    name = <span class="string">&quot;XunYu&quot;</span></span><br><span class="line"><span class="keyword">elif</span> match[<span class="number">2</span>]:</span><br><span class="line">    name = <span class="string">&quot;SiMayi&quot;</span></span><br><span class="line"><span class="keyword">elif</span> match[<span class="number">3</span>]:</span><br><span class="line">    name = <span class="string">&#x27;ZhangChunhua&#x27;</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    name = <span class="string">&#x27;Unknown&#x27;</span></span><br><span class="line">face_names.append(name)</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-绘制姓名和人脸"><a href="#5-绘制姓名和人脸" class="headerlink" title="5. 绘制姓名和人脸"></a>5. 绘制姓名和人脸</h4><p>得到对应的人脸识别结果之后，我们将遍历每一张未知图片中的人脸，通过 <code>OpenCV</code>的<code>rectangle</code>绘制脸部区域框和<code>putText</code>对应的人名：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 结果打上标签</span></span><br><span class="line"><span class="keyword">for</span> (top, right, bottom, left), name <span class="keyword">in</span> zip(face_locations, face_names):</span><br><span class="line">    <span class="comment"># 绘制脸部区域框</span></span><br><span class="line">    cv2.rectangle(frame, (left, top), (right, bottom), (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">2</span>)</span><br><span class="line">    <span class="comment"># 在脸部区域下面绘制人名</span></span><br><span class="line">    cv2.rectangle(frame, (left, bottom - <span class="number">25</span>),</span><br><span class="line">                    (right, bottom), (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), cv2.FILLED)</span><br><span class="line">    font = cv2.FONT_HERSHEY_DUPLEX</span><br><span class="line">    cv2.putText(frame, name, (left + <span class="number">6</span>, bottom - <span class="number">6</span>),</span><br><span class="line">                font, <span class="number">0.5</span>, (<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>), <span class="number">1</span>)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 显示图片</span></span><br><span class="line">image_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)</span><br><span class="line">cv2.imshow(<span class="string">&quot;laugh.jpg&quot;</span>, image_rgb)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我喝冰阔落<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/zfb.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wx.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -207,218 +379,144 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/10/11/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94Face-Recognition%E7%AF%87/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/11/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94Dlib%E7%AF%87/" class="archive-article-date">
-	  <time datetime="2020-10-11T12:03:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-11</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/10/11/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94Dlib%E7%AF%87/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">人脸识别入门——Dlib篇</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/11/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94Dlib%E7%AF%87/">人脸识别入门——Dlib篇</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">人脸识别</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Dlib</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Face-Recognition"><span class="toc-number">1.</span> <span class="toc-text">Face Recognition</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B"><span class="toc-number">1.1.</span> <span class="toc-text">一、人脸检测</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%AF%BB%E5%8F%96%E7%85%A7%E7%89%87"><span class="toc-number">1.1.1.</span> <span class="toc-text">1. 读取照片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%A3%80%E6%B5%8B%E7%85%A7%E7%89%87%E4%B8%AD%E4%BA%BA%E8%84%B8%E5%B9%B6%E8%BF%94%E5%9B%9E%E4%BA%BA%E8%84%B8%E4%BD%8D%E7%BD%AE"><span class="toc-number">1.1.2.</span> <span class="toc-text">2. 检测照片中人脸并返回人脸位置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E7%BB%98%E5%88%B6%E4%BA%BA%E8%84%B8%E5%8C%BA%E5%9F%9F"><span class="toc-number">1.1.3.</span> <span class="toc-text">3. 绘制人脸区域</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BA%BA%E8%84%B8%E7%89%B9%E5%BE%81%E7%82%B9%E8%8E%B7%E5%8F%96"><span class="toc-number">1.2.</span> <span class="toc-text">二、人脸特征点获取</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%AF%BB%E5%8F%96%E7%85%A7%E7%89%87-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">1. 读取照片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E8%8E%B7%E5%8F%96%E7%85%A7%E7%89%87%E4%B8%AD%E4%BA%BA%E8%84%B8%E7%89%B9%E5%BE%81%E7%82%B9"><span class="toc-number">1.2.2.</span> <span class="toc-text">2. 获取照片中人脸特征点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E7%BB%98%E5%88%B6%E7%89%B9%E5%BE%81%E7%82%B9"><span class="toc-number">1.2.3.</span> <span class="toc-text">3. 绘制特征点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB"><span class="toc-number">1.3.</span> <span class="toc-text">三、人脸识别</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%AF%BB%E5%8F%96%E5%9B%BE%E7%89%87"><span class="toc-number">1.3.1.</span> <span class="toc-text">1. 读取图片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E8%8E%B7%E5%8F%96128%E7%BB%B4%E7%9A%84%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F"><span class="toc-number">1.3.2.</span> <span class="toc-text">2. 获取128维的特征向量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%AF%94%E8%BE%83%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F%EF%BC%8C%E8%AF%86%E5%88%AB%E4%BA%BA%E8%84%B8"><span class="toc-number">1.3.3.</span> <span class="toc-text">3. 比较特征向量，识别人脸</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E7%BB%98%E5%88%B6%E5%B9%B6%E5%B1%95%E7%A4%BA"><span class="toc-number">1.4.</span> <span class="toc-text">四、人脸识别绘制并展示</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%AF%BC%E5%85%A5%E5%B7%B2%E7%9F%A5%E5%9B%BE%E7%89%87"><span class="toc-number">1.4.1.</span> <span class="toc-text">1. 导入已知图片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E7%BC%96%E7%A0%81%E5%B7%B2%E7%9F%A5%E5%9B%BE%E7%89%87"><span class="toc-number">1.4.2.</span> <span class="toc-text">2. 编码已知图片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%AF%BC%E5%85%A5%E6%9C%AA%E7%9F%A5%E5%9B%BE%E7%89%87"><span class="toc-number">1.4.3.</span> <span class="toc-text">3. 导入未知图片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E9%81%8D%E5%8E%86%E8%AF%86%E5%88%AB"><span class="toc-number">1.4.4.</span> <span class="toc-text">4. 遍历识别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E7%BB%98%E5%88%B6%E5%A7%93%E5%90%8D%E5%92%8C%E4%BA%BA%E8%84%B8"><span class="toc-number">1.4.5.</span> <span class="toc-text">5. 绘制姓名和人脸</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/10/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94OpenCV%E7%AF%87/" class="archive-article-date">
-	  <time datetime="2020-10-10T08:55:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-10</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/10/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94OpenCV%E7%AF%87/">人脸识别入门——OpenCV篇</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">人脸识别</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">OpenCV</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/30/Docker%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
-	  <time datetime="2020-07-30T05:48:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/30/Docker%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">Docker学习笔记（一）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/05/%E6%88%91%E5%9C%A8Hexo%E4%B8%8A%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-	  <time datetime="2020-07-05T13:23:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/05/%E6%88%91%E5%9C%A8Hexo%E4%B8%8A%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">我在Hexo上的第一篇博客</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/05/hello-world/" class="archive-article-date">
-	  <time datetime="2020-07-05T13:09:11.478Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/05/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+  <div id="gitalk-container"></div>
+  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+<script type="text/javascript">
+
+if(true){
+    var gitalk = new Gitalk({
+    clientID: '4bc6749491a33131479d',
+    clientSecret: '19cabf90cf57e64d43b9950efdb758372016ee19',
+    repo: 'yfaqh.github.io',
+    owner: 'yfaqh',
+    admin: ['yfaqh'],
+    id: 'Sun Oct 11 2020 20:21:30 GMT+0800',
+    distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
+
 
 
           </div>
@@ -442,8 +540,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
